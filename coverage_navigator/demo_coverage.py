@@ -16,37 +16,11 @@ def main():
     field = []
 
     # Asks for user input
-    print("Please input the points for the field (enter 'done' when finished):")
-    while True:
-        # Ask the user for the next point
-        point_input = input("Enter a point as 'x y' or 'done' to finish: ")
-
-        # If the user inputs 'done', stop the loop
-        if point_input.lower() == 'done':
-            break
-
-        try:
-            # Parse the input into x and y coordinates
-            point = list(map(float, point_input.split()))
-            # Check that there are 2 points
-            if len(point) != 2:
-                print("Error: You must enter exactly two values for x and y.")
-                continue
-            # Add the point to the field list
-            field.append(point)
-        except ValueError:
-            print("Error: Invalid input. Please enter two numeric values separated by space.")
-
-    if len(field) < 3:
-        print("Error: A valid polygon requires at least 3 points.")
-        return
-
-    # Ensure the polygon is closed (i.e., the last point should be the same as the first)
-    if field[0] != field[-1]:
-        field.append(field[0])
+    print("Please input the bounds for the field (staring at [0, 0])")
+    bound_input = input("Enter the bounds of the field: ")
+    field = [[0.0, 0.0], [0.0, bound_input], [bound_input, bound_input], [bound_input, 0.0], [0.0, 0.0]]
 
     # Now call the navigateCoverage function with the user-provided field
-    navigator.goToPose(field[0])
     navigator.navigateCoverage(field)
 
     i = 0

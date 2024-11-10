@@ -46,7 +46,6 @@ def main():
         field.append(field[0])
 
     # Now call the navigateCoverage function with the user-provided field
-    navigator.goToPose(field[0])
     navigator.navigateCoverage(field)
 
     i = 0

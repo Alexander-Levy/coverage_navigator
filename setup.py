@@ -21,6 +21,8 @@ setup(
     entry_points={
         'console_scripts': [
                 'test_coverage = coverage_navigator.test_coverage:main',
+                'demo_coverage = coverage_navigator.demo_coverage:main',
+                'field_coverage = coverage_navigator.field:main',
         ],
     },
 )
