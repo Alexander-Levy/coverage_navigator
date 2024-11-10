@@ -4,13 +4,23 @@
   <name>coverage_navigator</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="edward7030425@gmail.com">alex</maintainer>
+  <maintainer email="ingalexanderlevy@gmail.com">Alexander-Levy</maintainer>
   <license>Apache-2.0</license>
 
-  <test_depend>ament_copyright</test_depend>
-  <test_depend>ament_flake8</test_depend>
-  <test_depend>ament_pep257</test_depend>
-  <test_depend>python3-pytest</test_depend>
+  <!-- Add dependencies -->
+  <depend>rclcpp</depend>
+  <depend>rclcpp_action</depend>
+  <depend>nav2_util</depend>
+  <depend>nav2_bringup</depend>
+  <depend>opennav_coverage_msgs</depend>
+  <depend>opennav_coverage_bt</depend>
+  <depend>opennav_coverage</depend>
+  <depend>opennav_row_coverage</depend>
+  <depend>opennav_coverage_navigator</depend>
+  <depend>backported_bt_navigator</depend>
+
+  <test_depend>ament_lint_common</test_depend>
+  <test_depend>ament_lint_auto</test_depend>
 
   <export>
     <build_type>ament_python</build_type>

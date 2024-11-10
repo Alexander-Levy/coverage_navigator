@@ -13,13 +13,14 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='alex',
-    maintainer_email='edward7030425@gmail.com',
+    maintainer='Alexander Levy',
+    maintainer_email='ingalexanderlevy@gmail.com',
     description='TODO: Package description',
     license='Apache-2.0',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+                'test_coverage = coverage_navigator.test_coverage:main',
         ],
     },
 )
