@@ -1,22 +1,20 @@
 import time
 import rclpy
 
+from rclpy.duration import Duration
 from coverage_navigator.coverage_navigator import CoverageNavigator, TaskResult
 
 def main():
-
-    # Initialize the node
     rclpy.init()
 
-    # Initialize the coverage navigator
     navigator = CoverageNavigator()
-    navigator.waitNavStartup() # wait for the navigation stack to be active
+    navigator.startup()
 
     # Create an empty list to store the field coordinates
     field = []
 
-    # Asks for user input
     print("Please input the points for the field (enter 'done' when finished):")
+
     while True:
         # Ask the user for the next point
         point_input = input("Enter a point as 'x y' or 'done' to finish: ")
@@ -28,7 +26,6 @@ def main():
         try:
             # Parse the input into x and y coordinates
             point = list(map(float, point_input.split()))
-            # Check that there are 2 points
             if len(point) != 2:
                 print("Error: You must enter exactly two values for x and y.")
                 continue
@@ -50,7 +47,7 @@ def main():
 
     i = 0
     while not navigator.isTaskComplete():
-        # Print message while navigating
+        # Do something with the feedback
         i = i + 1
         feedback = navigator.getFeedback()
         if feedback and i % 5 == 0:

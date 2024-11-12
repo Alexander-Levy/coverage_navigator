@@ -20,8 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-                'field_coverage = coverage_navigator.field:main',
-                'bound_coverage = coverage_navigator.origin_bound:main',
+                'test_coverage = coverage_navigator.test_coverage:main',
         ],
     },
 )
