@@ -1,14 +1,16 @@
-from enum import Enum
 import time
+from enum import Enum
+
+import rclpy
+from rclpy.node import Node
+from rclpy.duration import Duration
+from rclpy.action import ActionClient
 
 from action_msgs.msg import GoalStatus
-from geometry_msgs.msg import Point32, Polygon
 from lifecycle_msgs.srv import GetState
+from geometry_msgs.msg import Point32, Polygon
+
 from opennav_coverage_msgs.action import NavigateCompleteCoverage # type: ignore
-import rclpy
-from rclpy.action import ActionClient
-from rclpy.duration import Duration
-from rclpy.node import Node
 
 
 class TaskResult(Enum):

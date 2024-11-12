@@ -4,17 +4,23 @@ import rclpy
 from rclpy.duration import Duration
 from coverage_navigator.coverage_navigator import CoverageNavigator, TaskResult
 
+
 def main():
+
+    # Initialize the node
     rclpy.init()
 
+    # Startup the coverage navigator
     navigator = CoverageNavigator()
+
+    # Wait for the navigation stack to be active
     navigator.startup()
 
     # Create an empty list to store the field coordinates
     field = []
 
+    # Get the field to cover
     print("Please input the points for the field (enter 'done' when finished):")
-
     while True:
         # Ask the user for the next point
         point_input = input("Enter a point as 'x y' or 'done' to finish: ")
@@ -34,6 +40,7 @@ def main():
         except ValueError:
             print("Error: Invalid input. Please enter two numeric values separated by space.")
 
+    # Ensure we have valid polygon
     if len(field) < 3:
         print("Error: A valid polygon requires at least 3 points.")
         return
