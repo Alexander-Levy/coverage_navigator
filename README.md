@@ -4,10 +4,10 @@ Simple python interface written to interact with the `NavigateCompleteCoverage` 
 
 ## TODO
 Pretty much everything, still very early. 
- - write readme
- - integrate rest of navigation stack (at least the basics)
- - clean up code
- - provide examples 
+ - [ ] write readme
+ - [ ] integrate rest of navigation stack (at least the basics)
+ - [ ] clean up code
+ - [ ] provide examples 
 
 ## Usage
 
@@ -20,11 +20,10 @@ ros2 run coverage_navigator test_coverage
 
 ## Dependencies
 
-### These ROS2 packages:
+### The navigation stack:
 ```bash
 sudo apt install -y                         
     ros-humble-navigation2   \
-    ros-humble-nav2-bringup  \
 ```
 
 ### Fields2Cover and Opennav_Coverage 
