@@ -9,3 +9,7 @@ Pretty much everything, still very early.
  - write readme
  - integrate rest of navigation stack (at least gotopose)
  - clean up code 
+
+
+
+ 
